@@ -12,10 +12,10 @@
     <div class="root">
         <div class="profile_box">
             <div class="info">
-                <h2 class="name">Yanglong Li</h2>
-                <div class="title">Fullstack Developer</div>
-                <div class="email">yanglongli@gmail.com</div>
-                <div class="icons">
+                <h2 class="info_txt name">Yanglong Li</h2>
+                <div class="info_txt title">Fullstack Developer</div>
+                <div class="info_txt email">yanglongli@gmail.com</div>
+                <div class="info_txt icons">
                     <div class="icon">
                         <i class="fab fa-github"></i>
                         <i class="fab fa-codepen"></i>
@@ -27,7 +27,7 @@
         <div class="projects_box">
             <div class="projects" id="projects" >
                 <div class="project" v-for="p in projs" :key="p.name">
-                    <a target="_blank"  href="{{p.code_link}}">
+                    <a target="_blank"  href="https://codepen.io/ohmama/full/{{p.code_link}}">
                         <div class="image_box">
                             <img src="{{p.img_href}}" alt="mario">
                             <div class="wave_wrapper">

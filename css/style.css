@@ -7,20 +7,27 @@ a {
 
 html,
 body {
-  margin: 0; }
+  margin: 0;
+  background-image: url(../assets/45-degree-fabric-dark.png); }
 
 .root {
   height: 100vh;
-  display: flex; }
+  display: flex;
+  overflow-x: hidden; }
 
 .info {
-  background-color: rgba(218, 216, 173, 0.8);
   background-image: url(../assets/45-degree-fabric-dark.png);
   width: 300px;
   padding: 20px;
   min-height: 300px;
   box-shadow: 10px 10px 0px 3px #333;
   font-size: 1.3rem; }
+  .info .info_txt {
+    color: white;
+    margin-bottom: 8px 4px #000000;
+    margin-bottom: 15px;
+    font-weight: 800;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px rgba(0, 0, 0, 0.3), 0 0 70px rgba(0, 0, 0, 0.3), 0 0 80px rgba(0, 0, 0, 0.3), 0 0 100px rgba(0, 0, 0, 0.3), 0 0 150px rgba(0, 0, 0, 0.3); }
 
 .profile_box {
   padding: 20px;
@@ -55,7 +62,7 @@ body {
 
 .projects_box {
   width: 100%;
-  margin: 0 34px; }
+  margin-left: 34px; }
   .projects_box .projects {
     position: relative;
     margin-top: 35px;
@@ -66,7 +73,7 @@ body {
     border-top: 1px solid #333;
     background-color: #555;
     background-image: url(../assets/45-degree-fabric-dark.png); }
-    .projects_box .projects:before, .projects_box .projects:after {
+    .projects_box .projects:after {
       content: "";
       position: absolute;
       top: 0;
@@ -81,15 +88,8 @@ body {
       height: 37px;
       width: 120%;
       transform: translate(0, -100%) skewX(45deg);
-      background: linear-gradient(180deg, #666, #333);
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url(../assets/45-degree-fabric-dark.png);
       z-index: -2; }
-    .projects_box .projects:before {
-      left: 100%;
-      transform-origin: 0 50%;
-      width: 35px;
-      transform: skewY(135deg);
-      background-color: #555;
-      background: linear-gradient(180deg, #666, #333); }
   .projects_box .project {
     width: 330px;
     text-align: center;
@@ -101,7 +101,10 @@ body {
     padding: 20px;
     cursor: pointer;
     transition: all 0.3s ease;
-    height: 360px; }
+    height: 360px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    overflow: hidden; }
     .projects_box .project .image_box {
       border-radius: 50%;
       width: 260px;
@@ -109,11 +112,9 @@ body {
       overflow: hidden;
       position: relative;
       margin: 0 auto; }
-      .projects_box .project .image_box .screenshot {
-        height: 100%;
-        padding: 5px; }
-        .projects_box .project .image_box .screenshot img {
-          height: 100%; }
+      .projects_box .project .image_box img {
+        padding: 5px;
+        height: 100%; }
     .projects_box .project .desc {
       position: absolute;
       bottom: 0;
