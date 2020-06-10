@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Yanglong's page</title>
+    <link rel="icon" href="./assets/icon.png">
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="./js/jquery.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
@@ -14,11 +15,12 @@
             <div class="info">
                 <h2 class="info_txt name">Yanglong Li</h2>
                 <div class="info_txt title">Fullstack Developer</div>
-                <div class="info_txt email">yanglongli@gmail.com</div>
+                <div class="info_txt email">yangloneli@gmail.com</div>
                 <div class="info_txt icons">
                     <div class="icon">
-                        <i class="fab fa-github"></i>
-                        <i class="fab fa-codepen"></i>
+                        <a target="_blank" href="https://github.com/ohmama"><i class="fab fa-github"></i></a>
+                        <a target="_blank" href="https://codepen.io/ohmama"><i class="fab fa-codepen"></i></a>
+                        <a target="_blank" href="https://www.linkedin.com/in/yanglongli/"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
             </div>
@@ -27,7 +29,7 @@
         <div class="projects_box">
             <div class="projects" id="projects" >
                 <div class="project" v-for="p in projs" :key="p.name">
-                    <a target="_blank"  href="https://codepen.io/ohmama/full/{{p.code_link}}">
+                    <a target="_blank"  href="{{p.code_link?'https://codepen.io/ohmama/full/'+p.code_link:p.git_link}}">
                         <div class="image_box">
                             <img src="{{p.img_href}}" alt="mario">
                             <div class="wave_wrapper">
@@ -39,7 +41,7 @@
                         </div>
                         <div class="codepen_box">
                             <div class="codepen_box_i">
-                                <i class="fab fa-codepen codepen_icon"></i>
+                                <i class="fab  {{p.icon?p.icon:'fa-codepen'}} "></i>
                             </div>
                         </div>
                     </a>

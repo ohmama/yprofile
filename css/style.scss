@@ -7,22 +7,22 @@ $project_size: 330px;
 
 a {
     text-decoration: none;
+    color: inherit;
 }
 
 html,
 body {
     margin: 0;
-    // background-color:rgba(0, 0, 0, .5);
-    background-image: url(../assets/45-degree-fabric-dark.png);
+    // background-image: url(../assets/45-degree-fabric-dark.png);
 }
 
 body {
 }
 
 .root {
-    height: 100vh;
+    height: 100%;
     display: flex;
-    overflow-x: hidden;
+    // overflow-x: hidden;
 }
 
 .info {
@@ -31,16 +31,29 @@ body {
     width: 300px;
     padding: 20px;
     min-height: 300px;
-    box-shadow: 10px 10px 0px 3px #333;
+    box-shadow: 0px 0px 5px 3px #222;
     font-size: 1.3rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+
     .info_txt{
         color: white;
-        margin-bottom:8px 4px #000000;
-        margin-bottom: 15px;
-        font-weight: 800;
+        margin-bottom: 20px;
+        font-weight: 900;
         text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff,
             0 0 40px rgba(0,0,0,0.3), 0 0 70px rgba(0,0,0,0.3), 0 0 80px rgba(0,0,0,0.3),
-            0 0 100px rgba(0,0,0,0.3), 0 0 150px rgba(0,0,0,0.3);
+            0 0 100px rgba(0,0,0,0.3);
+        transition: all 0.3s ease;
+    }
+    &:hover{
+        background-color: #333;
+        box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff,
+                0 0 40px rgba(0,0,0,0.3), 0 0 70px rgba(0,0,0,0.3), 0 0 80px rgba(0,0,0,0.3),
+                0 0 100px rgba(0,0,0,0.3), 0 0 150px rgba(0,0,0,0.3);
+        .info_txt{
+            // color: rgba(25,0.8);
+            opacity: 0.8;
+        }
     }
 }
 
@@ -50,44 +63,50 @@ body {
     position: relative;
     border-right: 1px solid #333;
     border-bottom: 1px solid #333;
-    background-color: #555;
-    background-image: url(../assets/45-degree-fabric-dark.png);
+    background-color: rgba(0,0,0,0.8);
+    // background-image: url(../assets/45-degree-fabric-dark.png);
 
     &:before,
     &:after {
         content: "";
         position: absolute;
-        top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        z-index: -1;
+        // background-image: url(../assets/45-degree-fabric-dark.png)
     }
 
     &:before {
         left: 100%;
+        top: 0;
         transform-origin: 0 50%;
         width: 35px;
         transform: skewY(45deg);
-        background-color: #555;
-        background: linear-gradient(90deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, .8));
+        // background-color: #555;
+        background: linear-gradient(90deg, rgba(0, 0, 0, .6), rgba(0, 0, 0, .8)),url(../assets/45-degree-fabric-dark.png);
     }
 
     &:after {
         left: -50px;
+        top:100%;
         transform-origin: 0 0;
-        top: 100%;
         height: 35px;
         transform: translate(0%, 0) skewX(45deg);
-        background: linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),url(../assets/45-degree-fabric-dark.png);
     }
 
 }
 
 .projects_box {
+    // width: 100%;
+    // margin-left: 34px;
     width: 100%;
-    margin-left: 34px;
-
+    margin-left: -34px;
+    padding-left: 68px;
+    margin-bottom: -35px;
+    height: 100%;
+    overflow: hidden;
+    
     .projects {
         position: relative;
         margin-top: 35px;
@@ -96,10 +115,10 @@ body {
         display: flex;
         flex-wrap: wrap;
         border-top: 1px solid #333;
-        background-color: #555;
-        background-image: url(../assets/45-degree-fabric-dark.png);
+        background-color: rgba(0,0,0,0.7);
+        // background-image: url(../assets/45-degree-fabric-dark.png);
 
-        // &:before,
+        &:before,
         &:after {
             content: "";
             position: absolute;
@@ -107,18 +126,16 @@ body {
             left: 0;
             right: 0;
             bottom: 0;
-            z-index: -1;
         }
 
-        &:after {
+        &:before {
             bottom: -100%;
             left: -37px;
             transform-origin: 0 0;
             height: 37px;
             width: 120%;
             transform: translate(0, -100%) skewX(45deg);
-            background: linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)),url(../assets/45-degree-fabric-dark.png);
-            z-index: -2;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),url(../assets/45-degree-fabric-dark.png);
         }
 
         // &:before {
@@ -140,12 +157,14 @@ body {
         border: 5px solid #CCB;
         border-radius: 5px;
         padding: 20px;
+        z-index: 2;
         cursor: pointer;
         transition: all 0.3s ease;
         height: 360px;
         margin-right: 20px;
         margin-bottom: 20px;
         overflow: hidden;
+        background-image: url(../assets/45-degree-fabric-dark.png);
         .image_box {
             border-radius: 50%;
             width: 260px;
@@ -154,11 +173,10 @@ body {
             position: relative;
             margin: 0 auto;
 
-
-
                 img {
                     padding: 5px;
                     height: 100%;
+                    opacity: 0.5;
                 }
         }
 
